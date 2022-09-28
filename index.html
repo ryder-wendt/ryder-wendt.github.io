@@ -27,7 +27,19 @@
   ;if(!Object.prototype.hasOwnProperty.call(n._iq,e)){n._iq[e]={_q:[]};v(n._iq[e])
   }return n._iq[e]};e.amplitude=n})(window,document);
 
-  amplitude.getInstance().init("6ea6ab0240a73f331a3f1a85c5e04133");
+  amplitude.getInstance().init("6ea6ab0240a73f331a3f1a85c5e04133", {
+    integrations: {
+      "Segment.io": {
+        deliveryStrategy: {
+          strategy: "batching",
+          config: {
+            size: 10,
+            timeout: 5000
+          }
+        }
+      }
+    }
+  });
 </script>
 <head>
  <script>
